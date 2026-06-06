@@ -26,6 +26,27 @@
   padding: 0 !important;
 }
 
+.page-home .home-banner-eyebrow {
+  font-size: 0.82rem;
+  letter-spacing: 3.5px;
+}
+
+.page-home .home-banner-title {
+  font-size: clamp(2rem, 3.6vw, 3.15rem);
+}
+
+.page-home .home-banner-desc {
+  font-size: 1.05rem;
+  max-width: 560px;
+}
+
+@media (min-width: 769px) {
+  .page-home .home-banner-slide {
+    height: min(72vh, 720px);
+    min-height: 520px;
+  }
+}
+
 /* ── Section header (eyebrow → title → subtitle) ── */
 .page-home .home-section-head {
   margin-bottom: 2.75rem;

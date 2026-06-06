@@ -1,0 +1,13 @@
+{{-- Overlay subpages (mở từ menu / CTA trên trang chủ) --}}
+@include('user.home.pages.cau-chuyen')
+@include('user.home.pages.doi-ngu')
+@include('user.home.pages.phim-truong')
+@include('user.home.pages.concept')
+@include('user.home.pages.vay-cuoi')
+@include('user.home.pages.ao-dai')
+@include('user.home.pages.vest')
+@include('user.home.pages.album')
+@include('user.home.pages.review')
+@include('user.home.pages.blog')
+@include('user.home.pages.faq')
+@include('user.home.pages.dat-lich')

@@ -250,7 +250,7 @@ header.scrolled{box-shadow:0 4px 30px rgba(42,31,23,0.07)}
   will-change:transform;
 }
 .home-banner-slide.is-active .home-banner-media img{
-  animation:homeBannerImgZoom 7s ease-out forwards;
+  animation:homeBannerImgZoom 5s ease-out forwards;
 }
 @keyframes homeBannerImgZoom{
   from{transform:scale(1)}
