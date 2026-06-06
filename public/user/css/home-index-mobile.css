@@ -432,7 +432,7 @@
 
   /* CTA – compact */
   .page-home .cta-band {
-    padding: 20px var(--home-inset);
+    padding: 1rem var(--home-inset);
   }
 
   .page-home .cta-title {

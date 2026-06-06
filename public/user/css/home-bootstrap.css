@@ -8,8 +8,8 @@
 .page-home > section.home-section,
 .page-home section.hero.home-section,
 .page-home .ba-section.home-section {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 @media (min-width: 992px) {
@@ -50,7 +50,7 @@
 
 /* ── Section header (eyebrow → title → subtitle) ── */
 .page-home .home-section-head {
-  margin-bottom: 2.75rem;
+  margin-bottom: 2rem;
 }
 
 .page-home .home-section-head .sec-tag {
@@ -199,7 +199,7 @@
 /* ── CTA band (Bootstrap row bên trong) ── */
 .page-home .cta-band {
   display: block;
-  padding: 4.75rem 3.75rem;
+  padding: 2rem;
 }
 
 .page-home .cta-band .row {
@@ -211,9 +211,19 @@
   max-width: 320px;
 }
 
+.page-home .cta-tag {
+  font-size: 0.55rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.page-home .cta-actions {
+  flex-wrap: nowrap;
+}
+
 @media (max-width: 991.98px) {
   .page-home .cta-band {
-    padding: 3rem 1.75rem;
+    padding: 2rem;
     text-align: center;
   }
 
@@ -221,6 +231,10 @@
     max-width: 320px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .page-home .cta-actions {
+    flex-wrap: wrap;
   }
 }
 
@@ -319,7 +333,7 @@
 .page-home .price-intro {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2rem;
   padding: 2rem 1.5rem;
   background: var(--white);
   border-radius: var(--r-sm);

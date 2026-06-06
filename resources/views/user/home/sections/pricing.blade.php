@@ -46,8 +46,8 @@
                                     <div class="price-amount"><span class="count-up" data-count="11.9" data-decimals="1">0</span><small>
                                             triệu</small></div>
                                     <div class="price-features">
-                                        <div>Chụp 2 điêm ngoại cảnh và studio</div>
-                                        <div>Thêm lựa chon concept hoàng hôn/ tối</div>
+                                        <div>Chụp 2 điểm ngoại cảnh và studio</div>
+                                        <div>Thêm lựa chọn concept hoàng hôn/ tối</div>
                                         <div>1 váy cưới dòng luxury nước đầu</div>
                                         <div>Album ảnh cưới 25x35</div>
                                         <div>40 ảnh chỉnh sửa</div>
@@ -90,3 +90,7 @@
         </div>
     </div>
 </section>
+
+@push('scripts')
+<script src="{{ asset('user/js/home-price-slider.js') }}"></script>
+@endpush
