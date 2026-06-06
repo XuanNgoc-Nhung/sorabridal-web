@@ -253,6 +253,48 @@
     font-size: 0.82rem;
   }
 
+  /* Phim trường – giữ 2 cột trên mobile */
+  .page-home .studio-phim-row {
+    --bs-gutter-x: 0.625rem;
+    --bs-gutter-y: 0.75rem;
+  }
+
+  .page-home #tab-studio .studio-card-img {
+    height: 128px;
+  }
+
+  .page-home #tab-studio .studio-card-body {
+    padding: 10px 10px 12px;
+  }
+
+  .page-home #tab-studio .studio-card h4 {
+    font-size: 0.8rem !important;
+    color: var(--ink) !important;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .page-home #tab-studio .studio-card-body p {
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 500;
+    line-height: 1.45;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .page-home #tab-studio .studio-card:hover {
+    transform: none;
+  }
+
   /* Collection – Bootstrap row */
   .page-home .col-layout.row {
     --bs-gutter-y: 1.25rem;
@@ -432,6 +474,24 @@
 
   .page-home .cta-title {
     font-size: 1.15rem;
+  }
+
+  .page-home .studio-phim-row {
+    --bs-gutter-x: 0.5rem;
+  }
+
+  .page-home #tab-studio .studio-card-img {
+    height: 108px;
+  }
+
+  .page-home #tab-studio .studio-card h4 {
+    font-size: 0.74rem !important;
+    color: var(--ink) !important;
+  }
+
+  .page-home #tab-studio .studio-card-body p {
+    font-size: 0.66rem;
+    color: var(--gold);
   }
 }
 

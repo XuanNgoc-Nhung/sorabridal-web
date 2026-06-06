@@ -15,25 +15,25 @@
         </div> --}}
 
         <div id="tab-studio" class="tab-pane active">
-            <div class="row g-4">
-                <div class="col-md-6">
+            <div class="row g-4 studio-phim-row">
+                <div class="col-6 col-md-6">
                 <div class="studio-card sr d2 sr-blur-in h-100"
                     onclick="window.location.href='https://album.sorawedding.vn/concept/'">
                     <div class="studio-card-img"><img src="{{ asset('/user/phimTruong1.webp') }}"
                             alt="Ánh sáng tự nhiên"></div>
                     <div class="studio-card-body">
-                        <h4>Sora’s rooftop – tầng 8, 315 bạch mai, Hà Nội</h4>
-                        <p>Tầm nhìn panoramic, golden hour, ánh sáng tự nhiên</p>
+                        <h4>Tầm nhìn panoramic, golden hour, ánh sáng tự nhiên</h4>
+                        <p>Sora’s rooftop – tầng 8, 315 bạch mai, Hà Nội</p>
                     </div>
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-6 col-md-6">
                 <div class="studio-card sr d2 h-100" onclick="window.location.href='https://album.sorawedding.vn/concept/'">
                     <div class="studio-card-img"><img src="{{ asset('/user/phimTruong2.webp') }}" alt="Biệt Thự Sora">
                     </div>
                     <div class="studio-card-body">
-                        <h4>Sora’s mansion – Hoàng mai, Hà Nội</h4>
-                        <p>Concept sân vườn, minimalist, không gian giàu cảm xúc</p>
+                        <h4>Concept sân vườn, minimalist, không gian giàu cảm xúc</h4>
+                        <p>Sora’s mansion – Hoàng mai, Hà Nội</p>
                     </div>
                 </div>
                 </div>
