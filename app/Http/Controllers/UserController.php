@@ -13,6 +13,7 @@ class UserController extends Controller
         return view('user.index', [
             'collectionSliders' => $this->collectionSliders(),
             'beforeAfterItems' => $this->beforeAfterItems(),
+            'homeBlogs' => $this->homeBlogs(),
         ]);
     }
 
@@ -34,6 +35,48 @@ class UserController extends Controller
                 'after_src' => 'user/anhPtsSau2.webp',
                 'after_alt' => 'Sau retouch',
                 'start' => 50,
+            ],
+        ];
+    }
+
+    private function homeBlogs(): array
+    {
+        return [
+            [
+                'image_src' => 'user/demo.jpg',
+                'image_placeholder' => '420x230/f2e3da/b07d62?text=Bí+quyết',
+                'image_alt' => 'Blog 1',
+                'category' => 'Tư vấn cô dâu',
+                'title' => '5 bí quyết chọn phong cách chụp ảnh cưới phù hợp nhất',
+                'excerpt' => 'Phù hợp với từng dáng người, tính cách và câu chuyện tình yêu của bạn...',
+                'url' => '#',
+            ],
+            [
+                'image_src' => 'user/demo.jpg',
+                'image_placeholder' => '420x230/eedfd6/b07d62?text=Xu+hướng',
+                'image_alt' => 'Blog 2',
+                'category' => 'Xu hướng 2025',
+                'title' => 'Top 3 concept phim trường được yêu thích nhất năm 2025',
+                'excerpt' => 'Minimalism, vintage và cổ điển châu Âu đang dẫn đầu xu hướng ảnh cưới...',
+                'url' => '#',
+            ],
+            [
+                'image_src' => 'user/demo.jpg',
+                'image_placeholder' => '420x230/f3e3db/b07d62?text=Phim+trường',
+                'image_alt' => 'Blog 3',
+                'category' => 'Tin Sora',
+                'title' => 'Ra mắt phim trường "Hoa Sữa" – lãng mạn mùa thu Hà Nội',
+                'excerpt' => 'Không gian mới hoàn toàn dành riêng cho các cặp đôi yêu vẻ đẹp thu Hà Nội...',
+                'url' => '#',
+            ],
+            [
+                'image_src' => 'user/demo.jpg',
+                'image_placeholder' => '420x230/e8e0d8/b07d62?text=Checklist',
+                'image_alt' => 'Blog 4',
+                'category' => 'Hướng dẫn',
+                'title' => 'Checklist chuẩn bị ngày chụp ảnh cưới không bỏ sót điều gì',
+                'excerpt' => 'Từ trang phục, phụ kiện đến lịch trình – tất cả trong một danh sách gọn gàng...',
+                'url' => '#',
             ],
         ];
     }

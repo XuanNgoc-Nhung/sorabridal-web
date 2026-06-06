@@ -417,6 +417,13 @@
   }
 
   /* Blog – compact */
+  .page-home .blog-cat {
+    font-size: 0.58rem;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    border-radius: 0 0 8px 0;
+  }
+
   .page-home .blog-body {
     padding: 12px 12px 14px;
   }
