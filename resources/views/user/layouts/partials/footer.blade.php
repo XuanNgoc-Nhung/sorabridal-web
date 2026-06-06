@@ -1,8 +1,8 @@
 <!-- ══════════════════════ FOOTER ════════════════════════ -->
 <footer>
     <div class="container">
-        <div class="footer-top">
-            <div>
+        <div class="footer-top row g-3 g-lg-5">
+            <div class="col-12 col-lg-4">
                 <span class="f-logo">Sora Bridal</span>
                 <p class="f-tagline">Nơi biến ước mơ về ngày cưới của bạn thành sự thật. Hơn 5 năm đồng hành và kiến tạo
                     hạnh phúc cho hàng nghìn cặp đôi</p>
@@ -14,7 +14,7 @@
                     <a href="#" class="f-soc" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
-            <div>
+            <div class="col-6 col-lg-2">
                 <h4>Khám phá</h4>
                 <ul>
                     <li><a href="#">Trang chủ</a></li>
@@ -25,7 +25,7 @@
                     <li><a href="#">Blog cưới</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="col-6 col-lg-2">
                 <h4>Dịch vụ</h4>
                 <ul>
                     <li><a href="#">Chụp ảnh cưới</a></li>
@@ -36,7 +36,7 @@
                     <li><a href="#">Đào tạo nghề</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="col-12 col-lg-4">
                 <h4>Liên hệ</h4>
                 <div class="f-contact-item"><i class="fas fa-map-marker-alt"></i><span>Sora Bridal – 252F MInh Khai, Hà Nội</span></div>
                 {{-- <div class="f-contact-item"><i class="fas fa-map-marker-alt"></i><span>Biệt Thự Sora – Colonial Villa,
@@ -51,9 +51,13 @@
             </div>
         </div>
         <hr>
-        <div class="footer-bottom">
-            <span>© 2025 Sora Studio · Tình yêu qua ống kính nghệ thuật</span>
-            <span>Thiết kế với ❤️ tại Hà Nội, Việt Nam</span>
+        <div class="footer-bottom row gy-2">
+            <div class="col-12 col-md-6 text-center text-md-start">
+                <span>© 2025 Sora Studio · Tình yêu qua ống kính nghệ thuật</span>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end">
+                <span>Thiết kế với ❤️ tại Hà Nội, Việt Nam</span>
+            </div>
         </div>
     </div>
 </footer>
