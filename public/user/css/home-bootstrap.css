@@ -306,6 +306,15 @@
   margin: 0 auto 2.5rem;
 }
 
+/* ── About: sec-tag full row phía trên ── */
+.page-home .about-sec-tag-row {
+  margin-bottom: 1.75rem;
+}
+
+.page-home .about-sec-tag-wrap .sec-tag {
+  margin-bottom: 0;
+}
+
 /* ── Gỡ grid cũ (chỉ khi chưa dùng Bootstrap row) ── */
 .page-home .hero-grid,
 .page-home .about-grid,
