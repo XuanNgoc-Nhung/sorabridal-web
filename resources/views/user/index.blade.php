@@ -14,12 +14,12 @@
 
 @section('content')
 <div class="page-home">
-    @include('user.home.sections.banner')
+    {{-- @include('user.home.sections.banner')
     @include('user.home.sections.hero')
     @include('user.home.sections.about')
     @include('user.home.sections.studio-concept')
     @include('user.home.sections.collection')
-    @include('user.home.sections.before-after')
+    @include('user.home.sections.before-after') --}}
     @include('user.home.sections.video')
     @include('user.home.sections.pricing')
     @include('user.home.sections.reviews')

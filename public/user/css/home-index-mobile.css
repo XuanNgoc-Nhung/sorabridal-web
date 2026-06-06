@@ -313,22 +313,46 @@
   }
 
   .page-home .video-inner {
-    height: 280px;
+    height: 240px;
+  }
+
+  .page-home .video-content-box {
+    max-width: 320px;
+    padding: 0.85rem 1rem 1rem;
+    border-radius: 10px;
   }
 
   .page-home .video-title {
-    font-size: 1.65rem;
+    font-size: 1.35rem;
   }
 
   .page-home .video-sub {
-    font-size: 0.84rem;
-    margin-bottom: 22px;
+    font-size: 0.76rem;
+    margin-bottom: 0.75rem;
   }
 
-  .page-home .video-stats {
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
+  .page-home .play-btn--compact {
+    width: 52px;
+    height: 52px;
+    font-size: 0.95rem;
+  }
+
+  .page-home .play-btn--compact::before {
+    width: 52px;
+    height: 52px;
+  }
+
+  .page-home .video-stats-section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .page-home .video-stats .vs-num {
+    font-size: 1.5rem;
+  }
+
+  .page-home .video-stats .vs-label {
+    font-size: 0.68rem;
   }
 
   /* Pricing – compact */
@@ -455,7 +479,16 @@
   }
 
   .page-home .video-inner {
-    height: 250px;
+    height: 220px;
+  }
+
+  .page-home .video-content-box {
+    max-width: 280px;
+    padding: 0.7rem 0.85rem 0.85rem;
+  }
+
+  .page-home .video-title {
+    font-size: 1.2rem;
   }
 
   .page-home .cta-title {

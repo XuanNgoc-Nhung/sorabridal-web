@@ -320,28 +320,35 @@
   window.addEventListener('resize', initAllInnerCarousels);
 
   /* ─── Video Modal (trang chủ) ─────────────────────────── */
-  const playBtn    = document.getElementById('playBtn');
-  const videoModal = document.getElementById('videoModal');
-  const modalClose = document.getElementById('modalClose');
-  const videoFrame = document.getElementById('videoFrame');
-  const videoId    = 'dQw4w9WgXcQ';
+  const playBtn     = document.getElementById('playBtn');
+  const videoModal  = document.getElementById('videoModal');
+  const modalClose  = document.getElementById('modalClose');
+  const videoPlayer = document.getElementById('videoPlayer');
+  const videoBg     = document.getElementById('videoBg');
 
-  if (playBtn && videoModal && modalClose && videoFrame) {
-    playBtn.addEventListener('click', () => {
-      videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  if (playBtn && videoModal && modalClose && videoPlayer) {
+    function openModal() {
+      if (videoBg) videoBg.pause();
       videoModal.classList.add('open');
       document.body.style.overflow = 'hidden';
-    });
+      videoPlayer.currentTime = 0;
+      videoPlayer.play().catch(() => {});
+    }
 
     function closeModal() {
       videoModal.classList.remove('open');
-      videoFrame.src = '';
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
       document.body.style.overflow = '';
+      if (videoBg) videoBg.play().catch(() => {});
     }
 
+    playBtn.addEventListener('click', openModal);
     modalClose.addEventListener('click', closeModal);
     videoModal.addEventListener('click', e => { if (e.target === videoModal) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && videoModal.classList.contains('open')) closeModal();
+    });
   }
 
   /* ─── Animate.css on scroll (WOW-style) ─────────────── */

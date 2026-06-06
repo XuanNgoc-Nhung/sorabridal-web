@@ -22,7 +22,8 @@
 }
 
 .page-home > section.home-banner,
-.page-home .video-section {
+.page-home .video-section,
+.page-home .video-stats-section {
   padding: 0 !important;
 }
 
@@ -223,10 +224,63 @@
   }
 }
 
-/* ── Video stats ── */
+/* ── Video hero – nội dung gọn trên nền video ── */
+.page-home .video-inner {
+  height: clamp(300px, 48vh, 460px);
+}
+
+.page-home .video-content-box {
+  max-width: 440px;
+  margin-inline: auto;
+  padding: 1.1rem 1.25rem 1.25rem;
+  border-radius: 14px;
+  background: rgba(42, 31, 23, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.page-home .video-tag {
+  font-size: 0.62rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.65rem;
+}
+
+.page-home .video-title {
+  font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+  margin-bottom: 0.45rem;
+  line-height: 1.15;
+}
+
+.page-home .video-sub {
+  font-size: clamp(0.78rem, 1.4vw, 0.86rem);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.page-home .play-btn--compact {
+  width: 62px;
+  height: 62px;
+  font-size: 1.1rem;
+}
+
+.page-home .play-btn--compact i {
+  margin-left: 3px;
+}
+
+.page-home .play-btn--compact::before {
+  width: 62px;
+  height: 62px;
+}
+
+/* ── Video stats (Bootstrap row) ── */
+.page-home .video-stats-section {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
 .page-home .video-stats .vs-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 600;
   color: #fff;
   display: block;
@@ -236,7 +290,8 @@
 .page-home .video-stats .vs-label {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.75);
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
+  letter-spacing: 0.5px;
 }
 
 /* ── About quote ── */
