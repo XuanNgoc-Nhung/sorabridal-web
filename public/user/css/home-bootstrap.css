@@ -283,19 +283,58 @@
   font-size: 1.25rem;
 }
 
-/* ── Before/after ── */
+/* ── Before/after – Bootstrap grid ── */
+.page-home .ba-grid.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .page-home .ba-grid.row {
+    --bs-gutter-x: 2rem;
+    --bs-gutter-y: 2rem;
+  }
+}
+
+.page-home .ba-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .page-home .ba-card-label {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.25rem;
   color: var(--ink);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
   font-weight: 500;
+  line-height: 1.35;
+}
+
+.page-home .ba-slider-wrap {
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  min-height: 220px;
+  max-height: 420px;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(42, 31, 23, 0.1);
+  contain: layout style;
 }
 
 .page-home .ba-intro {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 2.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 992px) {
+  .page-home .ba-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-home .ba-slider-wrap {
+    max-height: 460px;
+  }
 }
 
 /* ── About: sec-tag full row phía trên ── */

@@ -344,36 +344,6 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   }
 
-  /* ─── Before/After Slider ───────────────────────────── */
-  function initBASlider(wrapId, afterId, handleId) {
-    const wrap   = document.getElementById(wrapId);
-    const after  = document.getElementById(afterId);
-    const handle = document.getElementById(handleId);
-    if (!wrap || !after || !handle) return;
-    let dragging = false;
-
-    function setPos(x) {
-      const rect = wrap.getBoundingClientRect();
-      let pct = ((x - rect.left) / rect.width) * 100;
-      pct = Math.max(2, Math.min(98, pct));
-      after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-      handle.style.left = pct + '%';
-    }
-
-    wrap.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
-    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
-    window.addEventListener('mouseup', () => { dragging = false; });
-
-    wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchend', () => { dragging = false; });
-  }
-
-  initBASlider('ba1', 'ba1-after', 'ba1-handle');
-  initBASlider('ba2', 'ba2-after', 'ba2-handle');
-  initBASlider('ba3', 'ba3-after', 'ba3-handle');
-  initBASlider('ba4', 'ba4-after', 'ba4-handle');
-
   /* ─── Animate.css on scroll (WOW-style) ─────────────── */
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('.reveal-anim').forEach(el => {

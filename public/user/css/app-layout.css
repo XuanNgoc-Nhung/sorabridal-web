@@ -772,21 +772,41 @@ footer hr{border:none;border-top:1px solid #2b2318;margin-bottom:24px}
 ═══════════════════════════════════════════ */
 .ba-section{padding:96px 0;background:var(--cream)}
 .ba-header{text-align:center;margin-bottom:56px}
-.ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:44px;align-items:start}
-@media(max-width:900px){.ba-grid{grid-template-columns:1fr}}
-.ba-card{border-radius:var(--r);overflow:hidden;box-shadow:var(--sh)}
+.ba-card{border-radius:var(--r-sm);overflow:hidden;box-shadow:var(--sh)}
 .ba-card-label{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--ink);margin-bottom:18px;font-weight:500}
 .ba-slider-wrap{
-  position:relative;height:500px;border-radius:var(--r);overflow:hidden;
+  position:relative;height:500px;border-radius:10px;overflow:hidden;
   user-select:none;cursor:ew-resize;box-shadow:var(--sh);
+  touch-action:none;-webkit-user-select:none;
+  --ba-pos:50%;--ba-x:0px;
+  isolation:isolate;
 }
-.ba-img{position:absolute;inset:0;width:100%;height:100%}
-.ba-img img{width:100%;height:100%;object-fit:cover}
-.ba-img.after{clip-path:inset(0 50% 0 0);transition:clip-path 0s}
+.ba-slider-wrap.is-dragging{
+  box-shadow:0 4px 16px rgba(42,31,23,0.08);
+}
+.ba-img{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.ba-img img{
+  width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;
+  transform:translateZ(0);backface-visibility:hidden;
+}
+.ba-img.before{z-index:1}
+.ba-reveal{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  clip-path:inset(0 calc(100% - var(--ba-pos)) 0 0);
+  -webkit-clip-path:inset(0 calc(100% - var(--ba-pos)) 0 0);
+  transform:translateZ(0);
+  backface-visibility:hidden;
+}
+.ba-reveal .ba-img{position:absolute;inset:0;width:100%;height:100%}
+.ba-slider-wrap.is-dragging .ba-reveal{will-change:clip-path}
 .ba-handle{
-  position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);
+  position:absolute;top:0;bottom:0;left:0;
   width:3px;background:var(--white);z-index:10;cursor:ew-resize;
+  touch-action:none;
+  transform:translate3d(calc(var(--ba-x) - 1.5px),0,0);
+  backface-visibility:hidden;
 }
+.ba-slider-wrap.is-dragging .ba-handle{will-change:transform}
 .ba-handle-circle{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
   width:48px;height:48px;border-radius:50%;

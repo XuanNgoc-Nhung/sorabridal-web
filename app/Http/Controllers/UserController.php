@@ -12,7 +12,30 @@ class UserController extends Controller
     {
         return view('user.index', [
             'collectionSliders' => $this->collectionSliders(),
+            'beforeAfterItems' => $this->beforeAfterItems(),
         ]);
+    }
+
+    private function beforeAfterItems(): array
+    {
+        return [
+            [
+                'title' => 'Ảnh photoshop mặt cỏ trước & sau',
+                'before_src' => 'user/anhPtsTruoc1.webp',
+                'before_alt' => 'Trước retouch',
+                'after_src' => 'user/anhPtsSau1.webp',
+                'after_alt' => 'Sau retouch',
+                'start' => 50,
+            ],
+            [
+                'title' => 'Ảnh photoshop giả nắng trước & sau',
+                'before_src' => 'user/anhPtsTruoc2.webp',
+                'before_alt' => 'Trước retouch',
+                'after_src' => 'user/anhPtsSau2.webp',
+                'after_alt' => 'Sau retouch',
+                'start' => 50,
+            ],
+        ];
     }
 
     private function collectionSliders(): array
