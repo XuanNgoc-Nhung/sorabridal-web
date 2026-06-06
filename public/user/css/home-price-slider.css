@@ -1,0 +1,311 @@
+/* Bảng giá – CSS-only slider (Significa pattern)
+   https://significa.github.io/css-only-slider/ */
+
+.page-home .price-css-slider {
+  --price-slider-offset-near: 72px;
+  --price-slider-offset-far: 148px;
+  --price-slider-scale-near: 0.82;
+  --price-slider-scale-far: 0.62;
+  --price-slider-holder-max: 340px;
+
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.page-home .price-css-slider__radio {
+  display: none;
+}
+
+.page-home .price-css-slider__holder {
+  position: relative;
+  width: 100%;
+  max-width: var(--price-slider-holder-max);
+  margin: 0.75rem auto 0;
+  text-align: left;
+}
+
+.page-home .price-css-slider__col {
+  position: static;
+}
+
+.page-home .price-css-slider__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin: 0;
+  opacity: 1;
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease, z-index 0s;
+}
+
+.page-home .price-css-slider__item .price-card {
+  padding: 14px 12px;
+  transition: box-shadow 0.5s ease, border-color 0.35s ease;
+}
+
+.page-home .price-css-slider__item .price-name {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+.page-home .price-css-slider__item .price-amount {
+  font-size: 1.85rem;
+  margin: 8px 0;
+}
+
+.page-home .price-css-slider__item .price-amount small {
+  font-size: 0.82rem;
+}
+
+.page-home .price-css-slider__item .price-features {
+  margin: 10px 0 14px;
+}
+
+.page-home .price-css-slider__item .price-features > div {
+  font-size: 0.72rem;
+  padding: 3px 0;
+  gap: 6px;
+}
+
+.page-home .price-css-slider__item .price-features > div::before {
+  font-size: 0.55rem;
+}
+
+.page-home .price-css-slider__item .price-card.featured::before {
+  font-size: 0.55rem;
+  padding: 3px 10px;
+}
+
+.page-home .price-css-slider__item .btn {
+  padding: 7px 12px;
+  font-size: 0.74rem;
+}
+
+.page-home .price-css-slider__item .price-card .btn {
+  pointer-events: auto;
+}
+
+/* ── Slide 1 active ── */
+#price-slide-1:checked ~ .price-css-slider__holder .price-css-slider__item--1 {
+  position: relative;
+  z-index: 2;
+  transform: translate(0) scale(1);
+}
+
+#price-slide-1:checked ~ .price-css-slider__holder .price-css-slider__item--2 {
+  z-index: 1;
+  transform: translateX(var(--price-slider-offset-near)) scale(var(--price-slider-scale-near));
+}
+
+#price-slide-1:checked ~ .price-css-slider__holder .price-css-slider__item--3 {
+  z-index: 0;
+  transform: translateX(var(--price-slider-offset-far)) scale(var(--price-slider-scale-far));
+}
+
+/* ── Slide 2 active (default) ── */
+#price-slide-2:checked ~ .price-css-slider__holder .price-css-slider__item--1 {
+  z-index: 1;
+  transform: translateX(calc(var(--price-slider-offset-near) * -1)) scale(var(--price-slider-scale-near));
+}
+
+#price-slide-2:checked ~ .price-css-slider__holder .price-css-slider__item--2 {
+  position: relative;
+  z-index: 2;
+  transform: translate(0) scale(1);
+}
+
+#price-slide-2:checked ~ .price-css-slider__holder .price-css-slider__item--3 {
+  z-index: 1;
+  transform: translateX(var(--price-slider-offset-near)) scale(var(--price-slider-scale-near));
+}
+
+/* ── Slide 3 active ── */
+#price-slide-3:checked ~ .price-css-slider__holder .price-css-slider__item--1 {
+  z-index: 0;
+  transform: translateX(calc(var(--price-slider-offset-far) * -1)) scale(var(--price-slider-scale-far));
+}
+
+#price-slide-3:checked ~ .price-css-slider__holder .price-css-slider__item--2 {
+  z-index: 1;
+  transform: translateX(calc(var(--price-slider-offset-near) * -1)) scale(var(--price-slider-scale-near));
+}
+
+#price-slide-3:checked ~ .price-css-slider__holder .price-css-slider__item--3 {
+  position: relative;
+  z-index: 2;
+  transform: translate(0) scale(1);
+}
+
+/* Active card highlight */
+#price-slide-1:checked ~ .price-css-slider__holder .price-css-slider__item--1 .price-card,
+#price-slide-2:checked ~ .price-css-slider__holder .price-css-slider__item--2 .price-card,
+#price-slide-3:checked ~ .price-css-slider__holder .price-css-slider__item--3 .price-card {
+  border-color: var(--gold);
+  border-width: 2px;
+  box-shadow:
+    0 18px 40px rgba(196, 69, 106, 0.18),
+    0 8px 20px rgba(42, 31, 23, 0.1);
+}
+
+/* ── Bullets ── */
+.page-home .price-css-slider__bullets {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 1.25rem 0 0.25rem;
+}
+
+.page-home .price-css-slider__bullet {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 6px;
+  background: var(--border);
+  cursor: pointer;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.page-home .price-css-slider__bullet:hover {
+  background: var(--gold-light);
+}
+
+#price-slide-1:checked ~ .row .price-css-slider__bullets .price-css-slider__bullet--1,
+#price-slide-2:checked ~ .row .price-css-slider__bullets .price-css-slider__bullet--2,
+#price-slide-3:checked ~ .row .price-css-slider__bullets .price-css-slider__bullet--3 {
+  width: 20px;
+  background: var(--gold);
+}
+
+/* ── Mobile / tablet tweaks ── */
+@media (max-width: 991.98px) {
+  .page-home section.bg-warm {
+    overflow: visible;
+  }
+
+  .page-home .price-css-slider__holder.row {
+    display: block;
+    max-width: min(100%, var(--price-slider-holder-max));
+  }
+
+  .page-home .price-css-slider__col {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #price-slide-1:checked ~ .price-css-slider__holder .price-css-slider__item--3,
+  #price-slide-3:checked ~ .price-css-slider__holder .price-css-slider__item--1 {
+    opacity: 0;
+  }
+
+  #price-slide-1:checked ~ .price-css-slider__holder .price-css-slider__item--2,
+  #price-slide-2:checked ~ .price-css-slider__holder .price-css-slider__item--1,
+  #price-slide-2:checked ~ .price-css-slider__holder .price-css-slider__item--3,
+  #price-slide-3:checked ~ .price-css-slider__holder .price-css-slider__item--2 {
+    opacity: 0.65;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-home .price-css-slider {
+    --price-slider-offset-near: 58px;
+    --price-slider-offset-far: 118px;
+    --price-slider-holder-max: 300px;
+  }
+
+  .page-home .price-css-slider__item .price-card {
+    padding: 12px 10px;
+  }
+
+  .page-home .price-css-slider__item .price-name {
+    font-size: 1.05rem;
+  }
+
+  .page-home .price-css-slider__item .price-amount {
+    font-size: 1.65rem;
+  }
+
+  .page-home .price-css-slider__item .price-features > div {
+    font-size: 0.68rem;
+  }
+
+  .page-home .price-css-slider__item .btn {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-home .price-css-slider {
+    --price-slider-offset-near: 48px;
+    --price-slider-offset-far: 96px;
+    --price-slider-holder-max: 272px;
+  }
+}
+
+/* ── Desktop: 3 cột Bootstrap, ẩn slider ── */
+@media (min-width: 992px) {
+  .page-home .price-css-slider {
+    --price-slider-holder-max: 100%;
+  }
+
+  .page-home .price-css-slider__radio,
+  .page-home .price-css-slider__bullets {
+    display: none;
+  }
+
+  .page-home .price-css-slider__holder {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .page-home .price-css-slider__col {
+    display: flex;
+  }
+
+  .page-home .price-css-slider__item {
+    position: static !important;
+    width: 100%;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: auto !important;
+    cursor: default;
+  }
+
+  .page-home .price-css-slider__item .price-card {
+    padding: 20px 18px;
+    border-width: 1.5px;
+    transform: none !important;
+  }
+
+  .page-home .price-css-slider__item .price-name {
+    font-size: 1.45rem;
+  }
+
+  .page-home .price-css-slider__item .price-amount {
+    font-size: 2.5rem;
+    margin: 16px 0;
+  }
+
+  .page-home .price-css-slider__item .price-features {
+    margin: 20px 0 26px;
+  }
+
+  .page-home .price-css-slider__item .price-features > div {
+    font-size: 0.85rem;
+    padding: 6px 0;
+  }
+
+  .page-home .price-css-slider__item .btn {
+    padding: inherit;
+    font-size: inherit;
+  }
+}

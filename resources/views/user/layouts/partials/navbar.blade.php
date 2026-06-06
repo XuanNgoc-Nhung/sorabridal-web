@@ -17,7 +17,7 @@
         <li><a href="{{ route('user.khach-hang') }}" class="{{ request()->routeIs('user.khach-hang') ? 'active' : '' }}">Khách hàng</a></li>
         <li><a href="{{ route('user.blog-cuoi') }}" class="{{ request()->routeIs('user.blog-cuoi') ? 'active' : '' }}">Blog cưới</a></li>
         <li>
-          <a href="{{ route('user.dat-lich') }}" class="btn btn-solid" style="padding:4px 16px;font-size:18px;">
+          <a href="{{ route('user.dat-lich') }}" class="btn btn-solid {{ request()->routeIs('user.dat-lich') ? 'active' : '' }}" style="padding:6px 16px;font-size:16px;">
             <i class="fas fa-phone-alt"></i> Đặt lịch
           </a>
         </li>

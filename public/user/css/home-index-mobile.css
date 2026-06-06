@@ -1,24 +1,62 @@
-/* Trang chủ – mobile: lề đồng nhất 30px, section gọn hơn */
+/* Trang chủ – mobile: gọn hơn, bo góc nhỏ hơn, slider báo giá */
 
 @media (max-width: 768px) {
   body.page-home {
-    --home-inset: 30px;
+    --home-inset: 22px;
+    --r: 10px;
+    --r-sm: 6px;
+    --btn-radius: 22px;
   }
 
-  /* Lề ngang: viền viewport → nội dung */
-  body.page-home header .container,
-  .page-home .container {
-    padding-left: var(--home-inset);
-    padding-right: var(--home-inset);
+  /* Bo góc nhỏ – toàn trang */
+  .page-home .btn {
+    border-radius: var(--btn-radius) !important;
   }
 
-  /* Lề dọc: viền section → nội dung (banner không áp dụng) */
+  .page-home .price-card,
+  .page-home .price-intro,
+  .page-home .rev-card,
+  .page-home .blog-card,
+  .page-home .studio-card,
+  .page-home .cta-band,
+  .page-home .cta-offer,
+  .page-home .about-img-main,
+  .page-home .hero-img-main,
+  .page-home .hero-float-img,
+  .page-home .ba-slider-wrap,
+  .page-home .outer-track-wrap,
+  .page-home .inner-wrap,
+  .page-home .in-slide,
+  .page-home .home-banner-nav {
+    border-radius: var(--r-sm) !important;
+  }
+
+  .page-home .price-card.featured::before {
+    border-radius: 0 0 8px 8px;
+    font-size: 0.58rem;
+    padding: 4px 12px;
+  }
+
+  .page-home .play-btn,
+  .page-home .home-banner-dot {
+    border-radius: 50% !important;
+  }
+
+  /* Section gọn hơn */
   .page-home > section.home-section,
   .page-home section.hero.home-section,
   .page-home .ba-section.home-section,
   .page-home .collection-section.home-section {
-    padding-top: var(--home-inset);
-    padding-bottom: var(--home-inset);
+    padding-top: calc(var(--home-inset) * 0.85);
+    padding-bottom: calc(var(--home-inset) * 0.85);
+  }
+
+  /* Lề ngang: viền viewport → nội dung */
+
+  body.page-home header .container,
+  .page-home .container {
+    padding-left: var(--home-inset);
+    padding-right: var(--home-inset);
   }
 
   .page-home > section.home-banner {
@@ -27,8 +65,8 @@
   }
 
   .page-home .home-banner-slide {
-    height: min(72vh, 480px);
-    min-height: 360px;
+    height: min(58vh, 380px);
+    min-height: 300px;
   }
 
   .page-home .home-banner-content {
@@ -96,23 +134,16 @@
 
   .page-home .home-section-head,
   .page-home .section-head {
-    margin-bottom: 1.25rem !important;
-  }
-
-  .page-home .home-section-head .sec-tag {
-    font-size: 0.5rem !important;
-    letter-spacing: 2px;
-    margin-bottom: 0.65rem;
-    opacity: 0.85;
+    margin-bottom: 1rem !important;
   }
 
   .page-home .home-section-head .sec-title {
-    font-size: 1.75rem;
+    font-size: 1.45rem;
   }
 
   .page-home .home-section-head .sec-sub {
-    font-size: 0.7rem;
-    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    line-height: 1.55;
   }
 
   .page-home .ba-intro {
@@ -154,74 +185,55 @@
   }
 
   .page-home .hero-title {
-    font-size: 1.9rem;
-    margin-bottom: 12px;
-  }
-
-  .page-home .hero-typed-line {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
+    font-size: 1.65rem;
+    margin-bottom: 8px;
   }
 
   .page-home .hero-desc {
-    font-size: 0.86rem;
-    margin-bottom: 18px;
-    line-height: 1.65;
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+    line-height: 1.55;
   }
 
   .page-home .hero-actions {
-    margin-bottom: 22px;
-    gap: 10px;
-  }
-
-  .page-home .hero-actions .btn {
-    padding: 10px 20px;
-    font-size: 0.82rem;
+    margin-bottom: 16px;
   }
 
   .page-home .hero-divider {
-    margin-bottom: 18px;
-  }
-
-  .page-home .hero-stats {
-    gap: 12px 16px;
+    margin-bottom: 14px;
   }
 
   .page-home .stat-num {
-    font-size: 1.65rem !important;
+    font-size: 1.4rem !important;
   }
 
   .page-home .stat-label {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
   }
 
   .page-home .hero-img-main img {
-    height: 240px;
+    height: 200px;
   }
 
   .page-home .hero-float-img {
-    width: 100px;
-    right: 8px;
-    bottom: -12px;
+    width: 84px;
+    bottom: -8px;
   }
 
   /* About – order đã set qua order-lg-* / order-* trên HTML */
 
   .page-home .about-img-main img {
-    height: 260px;
+    height: 220px;
   }
 
   .page-home .about-quote {
-    font-size: 1.05rem !important;
-    margin-bottom: 16px;
-  }
-
-  .page-home .sig-name {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 12px;
+    line-height: 1.55;
   }
 
   .page-home .quote-open {
-    font-size: 3.5rem;
+    font-size: 2.75rem;
   }
 
   /* Studio cards */
@@ -270,16 +282,11 @@
   }
 
   .page-home .ba-slider-wrap {
-    height: 260px;
-  }
-
-  /* Video */
-  .page-home .video-section {
-    margin-top: 0;
+    height: 220px;
   }
 
   .page-home .video-inner {
-    height: 340px;
+    height: 280px;
   }
 
   .page-home .video-title {
@@ -297,144 +304,147 @@
     justify-content: center;
   }
 
-  /* Pricing */
+  /* Pricing – compact */
   .page-home .price-intro {
-    padding: 22px 18px;
-    margin-bottom: 24px;
-  }
-
-  .page-home .price-intro h3 {
-    font-size: 1.2rem;
-  }
-
-  .page-home .price-intro p {
-    font-size: 0.84rem;
-  }
-
-  .page-home .price-card {
-    padding: 22px 18px;
-  }
-
-  .page-home .price-name {
-    font-size: 1.2rem;
-  }
-
-  .page-home .price-amount {
-    font-size: 1.75rem !important;
-    margin: 10px 0;
-  }
-
-  .page-home .price-features {
-    margin: 14px 0 18px;
-  }
-
-  .page-home .price-features li {
-    font-size: 0.82rem;
-    padding: 5px 0;
-  }
-
-  /* Reviews */
-  .page-home .rev-card {
-    padding: 20px 18px;
-  }
-
-  .page-home .rev-text {
-    font-size: 0.84rem;
+    padding: 14px 12px;
     margin-bottom: 16px;
   }
 
-  .page-home .review-grid {
-    margin-bottom: 24px !important;
+  .page-home .price-intro h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
   }
 
-  /* Steps */
-  .page-home .steps-row {
-    margin-top: 24px;
-    gap: 20px;
-  }
-
-  .page-home .step-circle {
-    width: 44px;
-    height: 44px;
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-  }
-
-  .page-home .step-item h3 {
-    font-size: 0.98rem;
-  }
-
-  .page-home .step-item p {
+  .page-home .price-intro p {
     font-size: 0.78rem;
+    line-height: 1.55;
   }
 
-  /* CTA – Bootstrap row bên trong */
-  .page-home .cta-band {
-    padding: 28px var(--home-inset);
+  .page-home .price-intro i {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
   }
 
-  .page-home .cta-title {
-    font-size: 1.45rem;
+  .page-home .price-name {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
   }
 
-  .page-home .cta-sub {
-    font-size: 0.84rem;
+  .page-home .price-amount {
+    font-size: 1.55rem !important;
+    margin: 6px 0;
   }
 
-  .page-home .cta-offer {
-    padding: 16px 20px;
+  .page-home .price-amount small {
+    font-size: 0.82rem;
+  }
+
+  .page-home .price-features {
+    margin: 10px 0 14px;
+  }
+
+  .page-home .price-features li,
+  .page-home .price-features > div {
+    font-size: 0.76rem;
+    padding: 4px 0;
+  }
+
+  /* Reviews – compact */
+  .page-home .rev-card {
+    padding: 16px 14px;
+  }
+
+  .page-home .rev-text {
+    font-size: 0.78rem;
     margin-bottom: 12px;
+    line-height: 1.55;
   }
 
-  .page-home .cta-pct {
-    font-size: 2.2rem;
+  .page-home .rev-author img {
+    width: 40px;
+    height: 40px;
   }
 
-  /* Blog */
-  .page-home .blog-grid {
-    gap: 18px;
-  }
-
+  /* Blog – compact */
   .page-home .blog-body {
-    padding: 14px 16px 18px;
+    padding: 12px 12px 14px;
   }
 
   .page-home .blog-body h4 {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
+    line-height: 1.35;
   }
 
-  .page-home .view-all {
-    margin-top: 24px;
+  .page-home .blog-body p {
+    font-size: 0.76rem;
+  }
+
+  /* CTA – compact */
+  .page-home .cta-band {
+    padding: 20px var(--home-inset);
+  }
+
+  .page-home .cta-title {
+    font-size: 1.25rem;
+  }
+
+  .page-home .cta-sub {
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .page-home .cta-pct {
+    font-size: 1.85rem;
   }
 
   .page-home .btn {
-    padding: 10px 22px;
-    font-size: 0.82rem;
+    padding: 8px 18px;
+    font-size: 0.78rem;
   }
 }
 
 @media (max-width: 480px) {
-  .page-home .hero-title {
-    font-size: 1.65rem;
+  body.page-home {
+    --home-inset: 18px;
+    --r-sm: 5px;
   }
 
+  .page-home .hero-title {
+    font-size: 1.45rem;
+  }
+
+  .page-home .home-section-head .sec-title,
   .page-home .sec-title {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 
   .page-home .hero-img-main img {
-    height: 210px;
+    height: 180px;
   }
 
   .page-home .ba-slider-wrap {
-    height: 220px;
+    height: 190px;
   }
 
   .page-home .video-inner {
-    height: 300px;
+    height: 250px;
   }
 
   .page-home .cta-title {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
+  }
+}
+
+/* Báo giá – CSS-only slider: xem home-price-slider.css */
+@media (max-width: 991.98px) {
+  .page-home .price-css-slider.sr,
+  .page-home .price-css-slider.sr.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .page-home .price-css-slider__item .price-card {
+    opacity: 1;
+    visibility: visible;
   }
 }
