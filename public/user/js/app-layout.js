@@ -224,7 +224,7 @@
     function startAuto() { autoTimer = setInterval(() => outerGoTo(outerCur + 1), 7500); }
     function stopAuto()  { clearInterval(autoTimer); }
 
-    const outerWrap = outerTrack.closest('.outer-track-wrap');
+    const outerWrap = outerTrack.closest('.collection-carousel-wrap');
     if (outerWrap) {
       outerWrap.addEventListener('mouseenter', stopAuto);
       outerWrap.addEventListener('mouseleave', startAuto);
@@ -242,7 +242,12 @@
   /* ─── Inner Image Carousels ──────────────────────────── */
   const innerStates = {};
 
-  const INNER_MOBILE_BP = 768;
+  const INNER_MOBILE_BP  = 768;
+  const INNER_DESKTOP_BP = 992;
+
+  function isInnerCarousel() {
+    return window.innerWidth < INNER_DESKTOP_BP;
+  }
 
   function getInnerGap() {
     return window.innerWidth < INNER_MOBILE_BP ? 8 : 16;
@@ -276,6 +281,10 @@
   function updateInner(id) {
     const state = innerStates[id];
     if (!state) return;
+    if (!isInnerCarousel()) {
+      state.track.style.transform = 'none';
+      return;
+    }
     const gap = getInnerGap();
     const w = getInnerSlideW(id);
     state.track.style.transform = `translateX(-${state.cur * (w + gap)}px)`;
@@ -288,8 +297,14 @@
     updateInner(id);
   }
 
-  // Init all inner carousels
-  for (let i = 0; i < 4; i++) initInner(i);
+  function initAllInnerCarousels() {
+    document.querySelectorAll('[id^="it-"]').forEach(track => {
+      const id = track.id.replace('it-', '');
+      if (id !== '') initInner(id);
+    });
+  }
+
+  initAllInnerCarousels();
 
   // Nav buttons
   document.querySelectorAll('.in-nav').forEach(btn => {
@@ -302,9 +317,7 @@
   });
 
   // Recalc on resize
-  window.addEventListener('resize', () => {
-    for (let i = 0; i < 4; i++) initInner(i);
-  });
+  window.addEventListener('resize', initAllInnerCarousels);
 
   /* ─── Video Modal (trang chủ) ─────────────────────────── */
   const playBtn    = document.getElementById('playBtn');

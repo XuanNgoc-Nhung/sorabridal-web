@@ -1,312 +1,163 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url(https://fonts.bunny.net/css?family=crushed:400);
+@layer base, demo;
 
-	<link href="user/slider/dist/stackedCards.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="css/highlight.css" rel="stylesheet">
+@layer demo {
+  body{
+    font-family: 'Crushed', display;
 
-	<script src="https://cdn.jsdelivr.net/highlight.js/9.9.0/highlight.min.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+  }
+.wrapper {
+  --card-trans-duration: 1000ms;
+  --card-trans-easing:linear(0, 0.01 0.8%, 0.038 1.6%, 0.154 3.4%, 0.781 9.7%, 1.01 12.5%, 1.089 13.8%, 1.153 15.2%, 1.195 16.6%, 1.219 18%, 1.224 19.7%, 1.208 21.6%, 1.172 23.6%, 1.057 28.6%, 1.007 31.2%, 0.969 34.1%, 0.951 37.1%, 0.953 40.9%, 0.998 50.4%, 1.011 56%, 0.998 74.7%, 1);
+  
+  
+  --card-border-radius: 10px;
+  --card-width: 20vmin;
+  --radius: 50vmin; 
+  --cards: sibling-count();
+  @supports not (order:sibling-index()) {
+    --cards: 7;
+  }
+  --arc-size: 0.25;          /* essentially the distance between cards */
+  --arc-center: 0.75;        /* top */
+  --arc-start: calc(var(--arc-center) - var(--arc-size) / 2);
+  --arc-shift: 0;
+  --arc-shift-delta: 0.01;
 
+  position: relative;
+  width: var(--card-width);
+  aspect-ratio:4/6;
+  /*outline: 1px dashed red;*/
+ & > div {
+   --card-i: sibling-index();
+   @supports not (order:sibling-index()) {
+     &:nth-child(1){--card-i:1}
+     &:nth-child(2){--card-i:2}
+     &:nth-child(3){--card-i:3}
+     &:nth-child(4){--card-i:4}
+     &:nth-child(5){--card-i:5}
+     &:nth-child(6){--card-i:6}
+     &:nth-child(7){--card-i:7}
+   }
+  --arc-step: calc(var(--arc-size) / (var(--cards) - 1));
+    
+  position: absolute;
+  width: var(--card-width);
+  aspect-ratio:4/6;
+  background: white;
+  border-radius: var(--card-border-radius);
 
-	<style>
-		*, *:before, *:after {
-			box-sizing: border-box;
-		}
-		body {
-			color: #444;
-		}
-		html {
-			height: 100%;
-		}
-		body {
-			font-family: "Roboto", sans-serif;
-			width:  100%;
-			height: 100%;
-			min-height: 100%;
-			margin: 0px;
-			padding: 0px;
-			background-color: #eee;
-			background-color: #fff;
-		}
+  offset-path: circle(var(--radius) at 50% 100%);
+  offset-distance: calc(
+    (var(--arc-start)
+     + (var(--card-i) - 1) * var(--arc-step)
+     + var(--arc-shift)
+    ) * 100%
+  );
+	
 
-		.stacked-cards h2 {
-			text-align: center;
-			position: relative;
-			top: -20px;
-		}
+  offset-rotate: auto;
+  offset-anchor:50% 0%;
+  transition: all var(--card-trans-duration) var(--card-trans-easing);
 
-		.intro {
-			max-width: 600px;
-			margin: 20px auto;
-			text-align: center;
-		}
+   &:where(:nth-child(1),:nth-child(7)){
+     z-index: 0;
+   }
+    &:where(:nth-child(2),:nth-child(6)){
+     z-index: 1;
+   }
+    &:where(:nth-child(3),:nth-child(5)){
+     z-index: 3;
+   }
+    &:nth-child(4){
+     z-index: 4;
+   }
+   &:hover{
+     offset-anchor: 50% 10%;
+     & + div{
+      --arc-shift: calc(var(--arc-shift-delta) * 3);  
+     }
+    & + div + div{
+      --arc-shift: calc(var(--arc-shift-delta) * 2);   
+     }
+      & + div + div + div{
+      --arc-shift: calc(var(--arc-shift-delta) * 1);    
+     }
+    }
+    &:has(+*:hover){
+      --arc-shift: calc(var(--arc-shift-delta) * -3);    
+    }
+     &:has(+*+*:hover){
+      --arc-shift: calc(var(--arc-shift-delta) * -2);    
+    }
+     &:has(+*+*+*:hover){
+      --arc-shift: calc(var(--arc-shift-delta) * -1);   
+    }
 
-		.container-fuild {
-			max-width: 80%;
-			margin: 0 auto;
-		}
+  
+    & > img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    } 
+  }
+}
 
-		.container-fixed {
-			max-width: 767px;
-			margin: 0 auto;
-		}
+  
+  /* general styling not relevant for this demo */
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+	:root {
+		color-scheme: light dark;
+		--bg-dark: rgb(16, 24, 40);
+		--bg-light: rgb(248, 244, 238);
+		--txt-light: rgb(10, 10, 10);
+		--txt-dark: rgb(245, 245, 245););
+		--line-light: rgba(0 0 0 / .25);
+		--line-dark: rgba(255 255 255 / .25);
+    
+    --clr-bg: light-dark(var(--bg-light), var(--bg-dark));
+    --clr-txt: light-dark(var(--txt-light), var(--txt-dark));
+    --clr-lines: light-dark(var(--line-light), var(--line-dark));
+	}
+ 
+	body {
+		background-color: var(--clr-bg);
+		color: var(--clr-txt);
+		min-height: 100svh;
+		margin: 0;
+		padding: 2rem;
+		font-family: "Jura", sans-serif;
+		font-size: 1rem;
+		line-height: 1.5;
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+	}
 
-		.divider {
-			max-width: 500px;
-			margin: 25px auto;
-			background-color: #ccc;
-			height: 2px;
-			width: 100%;
-		}
+}
 
-		.stacked-cards {
-			padding-top: 40px;
-			padding-bottom: 15px;
-		}
-
-		.stacked-cards-fanOut {
-			padding-bottom: 40px;
-		}
-
-		.stacked-cards-fanOut li img {
-			max-height: 200px;
-		}
-
-		.stacked-cards li {
-			height: 250px;
-		}
-
-		@media (max-width: 767px) {
-			.stacked-cards li {
-				height: 180px;
-			}
-		}
-
-		.stacked-cards li {
-			background-color: #00bcd4;
-		}
-
-		.stacked-cards li:nth-child(n) {
-			background-color: #3599db;
-		}
-
-		.stacked-cards li:nth-child(2n) {
-			background-color: #e61b77;
-		}
-
-		.stacked-cards li:nth-child(3n) {
-			background-color: #00bcd4;
-		}
-
-		.stacked-cards li:nth-child(4n) {
-			background-color: #f4b251;
-		}
-
-		.stacked-cards li:nth-child(5n) {
-			background-color: #8e4497;
-		}
-
-		.source {
-			margin: 25px auto;
-		}
-
-		.header {
-			margin: 0px auto;
-			padding: 25px 5px;
-			background-color: #fff;
-		}
-		.header img {
-			display: block;
-			margin: 0 auto;
-			max-width: 300px;
-			height: auto;
-		}
-
-		
-	</style>
-
+    </style>
 </head>
 <body>
-	
-	<div id="wrap">
-		<div class="header">
-			<img src="{{ asset('user/slider/demo/img/logo.png') }}" alt="Stacked Cards">
-			<div class="intro">
-				Give your content boxes a stacked cards look with each card swapping with other.
-			</div>
-			
-		</div>
-		<div class="container-fixed stacked-cards stacked-cards-slide">
-			<h2>Slide</h2>
-			<ul>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-			</ul>
-		</div>
-
-		<div class="container-fixed source">
-<pre>
-<code class="javascript">
-	var stackedCard = new stackedCards({
-	 	selector: '.stacked-cards',
-	 	layout: "slide",
-	 	transformOrigin: "center",
-	});
-
-	stackedCard.init();
-
-</code>
-</pre>
-		</div>
-
-		<div class="divider"></div>
-
-		<div class="container-fixed stacked-cards stacked-cards-fanOut">
-			<h2>FanOut</h2>
-			<ul>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-				<li>
-				</li>
-			</ul>
-		</div>
-
-		<div class="container-fixed source">
-<pre>
-<code class="javascript">
-	var stackedCard = new stackedCards({
-	 	selector: '.stacked-cards',
-	 	layout: "fanOut",
-	 	transformOrigin: "bottom",
-	});
-
-	stackedCard.init();
-
-</code>
-</pre>
-		</div>
-		
-		
-
-		<div class="divider"></div>
-
-		<br><br>
-
-		<div class="container-fixed">
-			<h2>Usage</h2>
-			<p>
-				1. Setup HTML Markup
-				<div class="source">
-					<pre>
-						<code class="html">
-	&lt;div class="mycards"&gt;
-		&lt;ul&gt;
-			&lt;li&gt;your content&lt;/li&gt;
-			&lt;li&gt;your content&lt;/li&gt;
-			&lt;li&gt;your content&lt;/li&gt;
-			&lt;li&gt;your content&lt;/li&gt;
-			&lt;li&gt;your content&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/div&gt;
-						</code>
-					</pre>
-				</div>
-			</p>
-
-			<p>
-				2. Add stackedCards.css &amp; stackedCards.js into &lt;head&gt; You may add stackedCards.js before your closing &lt;/body&gt; tag
-				<div class="source">
-					<pre>
-						<code class="html">
-	&lt;link rel="stylesheet" type="text/css" href="stackedCards.css"/&gt;
-	&lt;script src="stackedCards.js"&gt;&lt;script&gt;
-						</code>
-					</pre>
-				</div>
-			</p>
-
-			<p>
-				3. Initialize the stackedCards in your script file
-				<div class="source">
-					<pre>
-						<code class="javascript">
-	var stackedCard = new stackedCards({
-	 	selector: '.mycards',
-	 	layout: "slide",
-	 	transformOrigin: "center",
-	});
-
-	stackedCard.init();
-
-						</code>
-					</pre>
-				</div>
-			</p>
-		</div>
-
-		<div class="container-fixed" style="text-align: center;">
-			<!--<a href="#">Checkout on Github</a>-->
-		</div>
-
-		<br>
-
-	</div>
-
-	<script src="{{ asset('user/slider/dist/stackedCards.min.js') }}"></script>
-
-	<script>
-		var stackedCardSlide = new stackedCards({
-		 	selector: '.stacked-cards-slide',
-		 	layout: "slide",
-		 	transformOrigin: "center",
-		 });
-
-		stackedCardSlide.init();
-
-		var stackedCardFanOut = new stackedCards({
-		 	selector: '.stacked-cards-fanOut',
-		 	layout: "fanOut",
-		 	transformOrigin: "bottom",
-		 });
-
-		stackedCardFanOut.init();
-	</script>
+<div class="wrapper">
+  <div><img src="https://picsum.photos/id/660/1200/1200" alt="sparkler"></div>
+  <div><img src="https://picsum.photos/id/669/1200/1200" alt="hat"></div>
+  <div><img src="https://picsum.photos/id/646/1200/1200" alt="sunlight"></div>
+  
+</div>
+    
 </body>
 </html>

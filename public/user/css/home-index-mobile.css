@@ -24,9 +24,9 @@
   .page-home .hero-img-main,
   .page-home .hero-float-img,
   .page-home .ba-slider-wrap,
-  .page-home .outer-track-wrap,
-  .page-home .inner-wrap,
-  .page-home .in-slide,
+  .page-home .collection-section .collection-carousel-wrap,
+  .page-home .collection-section .inner-wrap,
+  .page-home .collection-section .in-slide,
   .page-home .home-banner-nav {
     border-radius: var(--r-sm) !important;
   }
@@ -293,24 +293,6 @@
 
   .page-home #tab-studio .studio-card:hover {
     transform: none;
-  }
-
-  /* Collection – Bootstrap row */
-  .page-home .col-layout.row {
-    --bs-gutter-y: 1.25rem;
-  }
-
-  .page-home .col-slide {
-    padding: 0;
-  }
-
-  .page-home .watermark {
-    font-size: 3rem;
-    margin-bottom: -18px;
-  }
-
-  .page-home .outer-nav {
-    margin-top: 14px;
   }
 
   /* Before / after – Bootstrap row */

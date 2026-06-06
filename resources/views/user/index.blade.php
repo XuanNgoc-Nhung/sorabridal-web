@@ -7,6 +7,7 @@
 @push('styles')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('user/css/home-bootstrap.css') }}">
+<link rel="stylesheet" href="{{ asset('user/css/home-collection.css') }}">
 <link rel="stylesheet" href="{{ asset('user/css/home-index-mobile.css') }}">
 <link rel="stylesheet" href="{{ asset('user/css/home-price-slider.css') }}">
 @endpush

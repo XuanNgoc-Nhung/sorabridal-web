@@ -195,29 +195,6 @@
   margin-bottom: 0;
 }
 
-/* ── Collection slider layout ── */
-.page-home .col-layout .col-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 700;
-  color: rgba(176, 125, 98, 0.6);
-  line-height: 0.8;
-  margin-bottom: 0.5rem;
-}
-
-.page-home .col-layout .col-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  font-weight: 500;
-  color: var(--ink);
-  line-height: 1.2;
-  margin-bottom: 0.875rem;
-}
-
-.page-home .col-layout .col-desc {
-  margin-bottom: 1.75rem;
-}
-
 /* ── CTA band (Bootstrap row bên trong) ── */
 .page-home .cta-band {
   display: block;
@@ -337,8 +314,7 @@
 .page-home .price-grid,
 .page-home .review-grid,
 .page-home .blog-grid,
-.page-home .ba-grid:not(.row),
-.page-home .col-layout:not(.row) {
+.page-home .ba-grid:not(.row) {
   display: block;
 }
 
