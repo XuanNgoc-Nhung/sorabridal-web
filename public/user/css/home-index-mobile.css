@@ -203,20 +203,11 @@
     margin-bottom: 16px;
   }
 
-  .page-home .hero-divider,
-  .page-home .hero-stats-wrap .hero-divider {
-    margin-bottom: 14px;
-  }
-
-  .page-home .hero-stats-wrap {
-    margin-top: 1.25rem;
-  }
-
-  .page-home .stat-num {
+  .page-home .hero .row.flex-nowrap .col-3 > .count-up {
     font-size: 1.4rem !important;
   }
 
-  .page-home .stat-label {
+  .page-home .hero .row.flex-nowrap .col-3 > small {
     font-size: 0.68rem;
   }
 

@@ -127,32 +127,18 @@
   }
 }
 
-/* ── Hero stats ── */
-.page-home .hero-stats .stat-num {
+/* ── Hero stats (Bootstrap layout, giữ màu & cỡ chữ) ── */
+.page-home .hero .row.flex-nowrap .col-3 > .count-up {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.1rem;
   font-weight: 600;
   color: var(--gold);
-  display: block;
   line-height: 1;
 }
 
-.page-home .hero-stats .stat-label {
+.page-home .hero .row.flex-nowrap .col-3 > small {
   font-size: 0.75rem;
   color: var(--ink-soft);
-  margin-top: 0.25rem;
-}
-
-.page-home .hero-stats-wrap {
-  /* margin-top: 2.5rem; */
-}
-
-.page-home .hero-stats-wrap .hero-divider {
-  margin-bottom: 1.75rem;
-}
-
-.page-home .hero-stats {
-  flex-wrap: nowrap;
 }
 
 .page-home .hero-img-main img {
@@ -178,15 +164,6 @@
     right: -32px;
   }
 
-  .page-home .hero-stats-wrap {
-    /* margin-top: 3.5rem; */
-    padding-top: 0.5rem;
-  }
-
-  .page-home .hero-stats-wrap .hero-divider {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 /* ── Cards trong grid Bootstrap ── */

@@ -34,7 +34,7 @@
                     <img src="{{ asset('/user/anhTrangChu.webp') }}"
                         alt="Sora Studio wedding photography">
                 </div>
-                <div class="hero-float-img">
+                <div class="hero-float-img d-none d-lg-block">
                     <img src="{{ asset('/user/matTien.webp') }}"
                         style="width: 100%; height: 100%; object-fit: fill !important;" alt="Studio detail">
                 </div>
@@ -49,24 +49,26 @@
 
         </div>
 
-        <div class="hero-stats-wrap sr d5">
-            <div class="hero-divider"></div>
-            <div class="row g-2 g-lg-4 hero-stats justify-content-between">
-                <div class="col-3 stat-item text-center">
-                    <span class="stat-num count-up" data-count="5" data-suffix="+">0</span>
-                    <div class="stat-label">Năm kinh nghiệm</div>
+        <div class="mt-4 mt-lg-5 pt-lg-2 sr d5">
+            <div class="row justify-content-center mb-3 mb-lg-4">
+                <div class="col-2"><hr class="m-0 opacity-25"></div>
+            </div>
+            <div class="row g-2 g-lg-3 flex-nowrap text-center">
+                <div class="col-3">
+                    <span class="count-up d-block" data-count="5" data-suffix="+">0</span>
+                    <small class="d-block mt-1">Năm kinh nghiệm</small>
                 </div>
-                <div class="col-3 stat-item text-center">
-                    <span class="stat-num count-up" data-count="5000" data-format="k" data-suffix="+">0</span>
-                    <div class="stat-label">Cặp đôi hạnh phúc</div>
+                <div class="col-3">
+                    <span class="count-up d-block" data-count="5000" data-format="k" data-suffix="+">0</span>
+                    <small class="d-block mt-1">Cặp đôi hạnh phúc</small>
                 </div>
-                <div class="col-3 stat-item text-center">
-                    <span class="stat-num count-up" data-count="2">0</span>
-                    <div class="stat-label">Phim trường độc quyền</div>
+                <div class="col-3">
+                    <span class="count-up d-block" data-count="2">0</span>
+                    <small class="d-block mt-1">Phim trường độc quyền</small>
                 </div>
-                <div class="col-3 stat-item text-center">
-                    <span class="stat-num count-up" data-count="200" data-suffix="+">0</span>
-                    <div class="stat-label">Concept</div>
+                <div class="col-3">
+                    <span class="count-up d-block" data-count="200" data-suffix="+">0</span>
+                    <small class="d-block mt-1">Concept</small>
                 </div>
             </div>
         </div>
