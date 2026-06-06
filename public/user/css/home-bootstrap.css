@@ -1,0 +1,344 @@
+/* ═══════════════════════════════════════════════════════════
+   HOME PAGE – Bootstrap layout + Sora design system
+   Màu sắc giữ nguyên từ app-layout.css (--gold, --cream, …)
+   Quy tắc: spacing section, typography scale, contrast hierarchy
+═══════════════════════════════════════════════════════════ */
+
+/* ── Section spacing (nhất quán toàn trang) ── */
+.page-home > section.home-section,
+.page-home section.hero.home-section,
+.page-home .ba-section.home-section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+@media (min-width: 992px) {
+  .page-home > section.home-section,
+  .page-home section.hero.home-section,
+  .page-home .ba-section.home-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.page-home > section.home-banner,
+.page-home .video-section {
+  padding: 0 !important;
+}
+
+/* ── Section header (eyebrow → title → subtitle) ── */
+.page-home .home-section-head {
+  margin-bottom: 2.75rem;
+}
+
+.page-home .home-section-head .sec-tag {
+  font-size: 0.7rem;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  opacity: 1;
+  margin-bottom: 0.65rem;
+}
+
+.page-home .home-section-head .sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.75rem, 4vw, 2.7rem);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 0;
+}
+
+.page-home .home-section-head .sec-sub {
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.7;
+  margin-top: 0.75rem;
+  max-width: 560px;
+}
+
+.page-home .home-section-head.text-center .sec-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Typography contrast trong section body ── */
+.page-home .home-section .lead,
+.page-home .hero-desc,
+.page-home .about-quote,
+.page-home .col-desc,
+.page-home .price-intro p,
+.page-home .ba-intro p {
+  color: var(--ink-mid);
+  font-size: 0.93rem;
+  line-height: 1.75;
+}
+
+.page-home .hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.12;
+}
+
+.page-home .hero-title em {
+  color: var(--gold-dark);
+  font-style: italic;
+}
+
+/* ── Bootstrap grid overrides (giữ gap đồng nhất) ── */
+.page-home .row.g-4 {
+  --bs-gutter-x: 1.75rem;
+  --bs-gutter-y: 1.75rem;
+}
+
+.page-home .row.g-5 {
+  --bs-gutter-x: 2.5rem;
+  --bs-gutter-y: 2.5rem;
+}
+
+@media (min-width: 992px) {
+  .page-home .row.g-lg-5 {
+    --bs-gutter-x: 4.375rem;
+    --bs-gutter-y: 4.375rem;
+  }
+}
+
+/* ── Hero stats ── */
+.page-home .hero-stats .stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+}
+
+.page-home .hero-stats .stat-label {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: 0.25rem;
+}
+
+/* ── Cards trong grid Bootstrap ── */
+.page-home .studio-card,
+.page-home .price-card,
+.page-home .rev-card,
+.page-home .blog-card {
+  height: 100%;
+}
+
+.page-home .studio-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  color: var(--gold);
+}
+
+/* ── Collection slider layout ── */
+.page-home .col-layout .col-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  color: rgba(176, 125, 98, 0.6);
+  line-height: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.page-home .col-layout .col-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.875rem;
+}
+
+.page-home .col-layout .col-desc {
+  margin-bottom: 1.75rem;
+}
+
+/* ── CTA band (Bootstrap row bên trong) ── */
+.page-home .cta-band {
+  display: block;
+  padding: 4.75rem 3.75rem;
+}
+
+.page-home .cta-band .row {
+  position: relative;
+  z-index: 1;
+}
+
+.page-home .cta-right {
+  max-width: 320px;
+}
+
+@media (max-width: 991.98px) {
+  .page-home .cta-band {
+    padding: 3rem 1.75rem;
+    text-align: center;
+  }
+
+  .page-home .cta-right {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ── Video stats ── */
+.page-home .video-stats .vs-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  line-height: 1;
+}
+
+.page-home .video-stats .vs-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0.25rem;
+}
+
+/* ── About quote ── */
+.page-home .about-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--ink-mid);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.page-home .sig-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.page-home .sig-role {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ── Price intro ── */
+.page-home .price-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  padding: 2rem 1.5rem;
+  background: var(--white);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+}
+
+.page-home .price-intro h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin: 0.75rem 0;
+}
+
+.page-home .price-intro i {
+  color: var(--gold);
+  font-size: 1.25rem;
+}
+
+/* ── Before/after ── */
+.page-home .ba-card-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.page-home .ba-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ── Gỡ grid cũ (chỉ khi chưa dùng Bootstrap row) ── */
+.page-home .hero-grid,
+.page-home .about-grid,
+.page-home .card-grid,
+.page-home .price-grid,
+.page-home .review-grid,
+.page-home .blog-grid,
+.page-home .ba-grid:not(.row),
+.page-home .col-layout:not(.row) {
+  display: block;
+}
+
+/* ── Background sections ── */
+.page-home section.bg-warm {
+  background: var(--cream-warm);
+}
+
+/* ── Khôi phục nút Sora (Bootstrap load sau app-layout) ── */
+.page-home .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 30px;
+  border-radius: 60px;
+  font-weight: 500;
+  font-size: 0.88rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: 0.3s var(--ease);
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  text-decoration: none;
+}
+
+.page-home .btn-solid {
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+
+.page-home .btn-solid:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(176, 125, 98, 0.35);
+}
+
+.page-home .btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.page-home .btn-outline:hover {
+  background: var(--gold);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.page-home .btn-ghost {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.page-home .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #fff;
+}
+
+.page-home .btn.w-100 {
+  width: 100%;
+}
+
+.page-home .btn.justify-content-center {
+  justify-content: center;
+}
