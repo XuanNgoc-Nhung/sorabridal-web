@@ -16,8 +16,8 @@
   .page-home > section.home-section,
   .page-home section.hero.home-section,
   .page-home .ba-section.home-section {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
@@ -141,6 +141,52 @@
   font-size: 0.75rem;
   color: var(--ink-soft);
   margin-top: 0.25rem;
+}
+
+.page-home .hero-stats-wrap {
+  /* margin-top: 2.5rem; */
+}
+
+.page-home .hero-stats-wrap .hero-divider {
+  margin-bottom: 1.75rem;
+}
+
+.page-home .hero-stats {
+  flex-wrap: nowrap;
+}
+
+.page-home .hero-img-main img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .page-home .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .page-home .hero-actions {
+    margin-bottom: 0;
+  }
+
+  .page-home .hero-float-img {
+    width: 180px;
+    height: 225px;
+    right: -32px;
+  }
+
+  .page-home .hero-stats-wrap {
+    /* margin-top: 3.5rem; */
+    padding-top: 0.5rem;
+  }
+
+  .page-home .hero-stats-wrap .hero-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* ── Cards trong grid Bootstrap ── */

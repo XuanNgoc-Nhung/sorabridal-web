@@ -27,31 +27,12 @@
                             class="fas fa-arrow-right"></i></a>
                     {{-- <a href="#" class="btn btn-outline">Xem bộ sưu tập</a> --}}
                 </div>
-                <div class="hero-divider sr d5"></div>
-                <div class="row g-3 g-md-4 hero-stats sr d5">
-                    <div class="col-6 col-md-3 stat-item">
-                        <span class="stat-num count-up" data-count="5" data-suffix="+">0</span>
-                        <div class="stat-label">Năm kinh nghiệm</div>
-                    </div>
-                    <div class="col-6 col-md-3 stat-item">
-                        <span class="stat-num count-up" data-count="5000" data-format="k" data-suffix="+">0</span>
-                        <div class="stat-label">Cặp đôi hạnh phúc</div>
-                    </div>
-                    <div class="col-6 col-md-3 stat-item">
-                        <span class="stat-num count-up" data-count="2">0</span>
-                        <div class="stat-label">Phim trường độc quyền</div>
-                    </div>
-                    <div class="col-6 col-md-3 stat-item">
-                        <span class="stat-num count-up" data-count="200" data-suffix="+">0</span>
-                        <div class="stat-label">Concept</div>
-                    </div>
-                </div>
             </div>
 
             <div class="col-lg-6 hero-img-wrap sr sr-zoom d2 order-1 order-lg-2">
                 <div class="hero-img-main">
                     <img src="{{ asset('/user/anhTrangChu.webp') }}"
-                        style="width: 100%; height: 100%; object-fit: cover;" alt="Sora Studio wedding photography">
+                        alt="Sora Studio wedding photography">
                 </div>
                 <div class="hero-float-img">
                     <img src="{{ asset('/user/matTien.webp') }}"
@@ -66,6 +47,28 @@
         </div> --}}
             </div>
 
+        </div>
+
+        <div class="hero-stats-wrap sr d5">
+            <div class="hero-divider"></div>
+            <div class="row g-2 g-lg-4 hero-stats justify-content-between">
+                <div class="col-3 stat-item text-center">
+                    <span class="stat-num count-up" data-count="5" data-suffix="+">0</span>
+                    <div class="stat-label">Năm kinh nghiệm</div>
+                </div>
+                <div class="col-3 stat-item text-center">
+                    <span class="stat-num count-up" data-count="5000" data-format="k" data-suffix="+">0</span>
+                    <div class="stat-label">Cặp đôi hạnh phúc</div>
+                </div>
+                <div class="col-3 stat-item text-center">
+                    <span class="stat-num count-up" data-count="2">0</span>
+                    <div class="stat-label">Phim trường độc quyền</div>
+                </div>
+                <div class="col-3 stat-item text-center">
+                    <span class="stat-num count-up" data-count="200" data-suffix="+">0</span>
+                    <div class="stat-label">Concept</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
