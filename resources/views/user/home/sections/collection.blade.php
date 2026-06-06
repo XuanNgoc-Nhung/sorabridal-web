@@ -16,8 +16,8 @@
                         <div class="col-slide">
                             <div class="row align-items-center g-4 g-lg-5">
                                 <div class="col-lg-5 order-1">
-                                    <div class="collection-num sec-tag">{{ $slide['number'] }}</div>
-                                    <h3 class="collection-title sec-tag text-pink">{{ $slide['title'] }}</h3>
+                                    <div class="collection-num">{{ $slide['number'] }}</div>
+                                    <h3 class="collection-title text-pink">{{ $slide['title'] }}</h3>
                                     <p class="collection-desc">{{ $slide['description'] }}</p>
                                     <div class="collection-actions">
                                         <a href="{{ $slide['cta_url'] }}" target="_blank" rel="noopener noreferrer"
