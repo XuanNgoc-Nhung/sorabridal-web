@@ -721,14 +721,21 @@ footer{background:#1b1510;color:#cdc5bc;padding:68px 0 32px}
 .footer-top{margin-bottom:52px}
 .f-logo{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:500;color:#fff;display:block;margin-bottom:12px}
 .f-tagline{font-size:0.86rem;color:#9a8e86;line-height:1.75;margin-bottom:20px}
-.f-socials{display:flex;gap:12px}
+.f-socials{display:flex;gap:12px;flex-wrap:wrap}
 .f-soc{
-  width:38px;height:38px;border-radius:50%;
-  border:1px solid #3a3028;color:#9a8e86;
-  display:flex;align-items:center;justify-content:center;font-size:0.84rem;
-  transition:0.22s;
+  width:40px;height:40px;border-radius:50%;
+  border:none;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 0.22s,box-shadow 0.22s,opacity 0.22s;
+  flex-shrink:0;
 }
-.f-soc:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.f-soc svg{width:18px;height:18px;fill:#fff}
+.f-soc:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,0.35);opacity:0.92}
+.f-soc--facebook{background:#1877F2}
+.f-soc--instagram{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
+.f-soc--tiktok{background:linear-gradient(135deg,#25F4EE 0%,#FE2C55 100%)}
+.f-soc--youtube{background:#FF0000}
+.f-soc--pinterest{background:#E60023}
 footer h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#fff;margin-bottom:20px}
 footer ul li{margin-bottom:4px}
 footer ul li a{font-size:0.84rem;color:#9a8e86;transition:0.18s}
@@ -787,7 +794,8 @@ footer hr{border:none;border-top:1px solid #2b2318;margin-bottom:24px}
   .f-logo{font-size:1.55rem;margin-bottom:8px}
   .f-tagline{font-size:0.78rem;line-height:1.6;margin-bottom:14px}
   .f-socials{gap:8px}
-  .f-soc{width:32px;height:32px;font-size:0.75rem}
+  .f-soc{width:36px;height:36px}
+  .f-soc svg{width:16px;height:16px}
   footer h4{font-size:0.95rem;margin-bottom:12px}
   footer ul li{margin-bottom:7px}
   footer ul li a{font-size:0.76rem}
