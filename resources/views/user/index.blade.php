@@ -16,6 +16,7 @@
     @include('user.home.sections.banner')
     @include('user.home.sections.hero')
     @include('user.home.sections.about')
+    @include('user.home.sections.feedback')
     @include('user.home.sections.studio-concept')
     @include('user.home.sections.collection')
     @include('user.home.sections.before-after')

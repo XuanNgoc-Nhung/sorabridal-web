@@ -14,6 +14,7 @@ class UserController extends Controller
             'collectionSliders' => $this->collectionSliders(),
             'beforeAfterItems' => $this->beforeAfterItems(),
             'homeBlogs' => $this->homeBlogs(),
+            'feedbackImages' => $this->feedbackImages(),
         ]);
     }
 
@@ -79,6 +80,21 @@ class UserController extends Controller
                 'url' => '#',
             ],
         ];
+    }
+
+    private function feedbackImages(): array
+    {
+        $files = glob(public_path('user/feedback/*.{jpg,jpeg,png,webp}'), GLOB_BRACE) ?: [];
+        sort($files, SORT_NATURAL);
+
+        return array_map(function (string $file) {
+            $name = pathinfo($file, PATHINFO_FILENAME);
+
+            return [
+                'src' => 'user/feedback/' . basename($file),
+                'alt' => 'Phản hồi khách hàng ' . $name,
+            ];
+        }, $files);
     }
 
     private function collectionSliders(): array
