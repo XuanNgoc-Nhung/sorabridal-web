@@ -4,11 +4,17 @@
 
 @section('body_class', 'page-home')
 
+@php
+$shouldAutoOpenBookingOverlay = old('booking_form_context') === 'home' || session('booking_form_context') === 'home';
+@endphp
+
 @push('styles')
 <link rel="stylesheet" href="{{ asset('user/css/home-bootstrap.css') }}">
 <link rel="stylesheet" href="{{ asset('user/css/home-collection.css') }}">
 <link rel="stylesheet" href="{{ asset('user/css/home-index-mobile.css') }}">
 <link rel="stylesheet" href="{{ asset('user/css/home-price-slider.css') }}">
+<link rel="stylesheet" href="{{ asset('user/css/home-support-widget.css') }}">
+<link rel="stylesheet" href="{{ asset('user/css/home-back-to-top.css') }}">
 @endpush
 
 @section('content')
@@ -27,11 +33,18 @@
 </div>
 
 @include('user.home.pages.subpages')
+
+@include('user.home.partials.support-widget', [
+    'skipAutoOpen' => $shouldAutoOpenBookingOverlay ?? false,
+])
+
+@include('user.home.partials.back-to-top')
 @endsection
 
-@php
-$shouldAutoOpenBookingOverlay = old('booking_form_context') === 'home' || session('booking_form_context') === 'home';
-@endphp
+@push('scripts')
+<script src="{{ asset('user/js/home-support-widget.js') }}" defer></script>
+<script src="{{ asset('user/js/home-back-to-top.js') }}" defer></script>
+@endpush
 
 @if ($shouldAutoOpenBookingOverlay)
 @push('scripts')
