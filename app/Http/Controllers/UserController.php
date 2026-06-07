@@ -37,6 +37,22 @@ class UserController extends Controller
                 'after_alt' => 'Sau retouch',
                 'start' => 50,
             ],
+            [
+                'title' => 'Ảnh photoshop giả nắng trước & sau',
+                'before_src' => 'user/anhPtsSau3.webp',
+                'before_alt' => 'Trước retouch',
+                'after_src' => 'user/anhPtsTruoc3.webp',
+                'after_alt' => 'Sau retouch',
+                'start' => 50,
+            ],
+            [
+                'title' => 'Ảnh photoshop giả nắng trước & sau',
+                'before_src' => 'user/anhPtsSau4.webp',
+                'before_alt' => 'Trước retouch',
+                'after_src' => 'user/anhPtsTruoc4.webp',
+                'after_alt' => 'Sau retouch',
+                'start' => 50,
+            ],
         ];
     }
 
