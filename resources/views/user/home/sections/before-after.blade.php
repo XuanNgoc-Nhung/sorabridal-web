@@ -24,11 +24,13 @@
                         <h3 class="ba-card-label">{{ $loop->iteration }}. {{ $item['title'] }}</h3>
                         <div class="ba-slider-wrap" data-ba-start="{{ $item['start'] ?? 50 }}">
                             <div class="ba-img before">
-                                <img src="{{ asset($item['before_src']) }}" alt="{{ $item['before_alt'] }}" draggable="false" loading="lazy">
+                                <img class="ba-img-fill" src="{{ asset($item['before_src']) }}" alt="" aria-hidden="true" draggable="false" loading="lazy">
+                                <img class="ba-img-main" src="{{ asset($item['before_src']) }}" alt="{{ $item['before_alt'] }}" draggable="false" loading="lazy">
                             </div>
                             <div class="ba-reveal">
                                 <div class="ba-img after">
-                                    <img src="{{ asset($item['after_src']) }}" alt="{{ $item['after_alt'] }}" draggable="false" loading="lazy">
+                                    <img class="ba-img-fill" src="{{ asset($item['after_src']) }}" alt="" aria-hidden="true" draggable="false" loading="lazy">
+                                    <img class="ba-img-main" src="{{ asset($item['after_src']) }}" alt="{{ $item['after_alt'] }}" draggable="false" loading="lazy">
                                 </div>
                             </div>
                             <div class="ba-handle" role="slider" aria-label="So sánh trước và sau" aria-valuemin="2" aria-valuemax="98" aria-valuenow="{{ $item['start'] ?? 50 }}">
